@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "JetBrains Mono", monospace;
+  --font-serif: "Source Serif 4", serif;
+  --color-textbook-bg: #FCFBF7; /* warm paper off-white */
+  --color-textbook-panel: #FFFFFF;
+  --color-textbook-border: #E2E8F0;
+  --color-textbook-border-strong: #94A3B8;
+  --color-textbook-text: #1E293B; 
+  --color-textbook-text-muted: #64748B;
+  --color-textbook-accent-blue: #2563EB;
+  --color-textbook-accent-yellow: #FEF08A;
+  --color-textbook-accent-red: #E11D48;
+}
+
+body {
+  background-color: var(--color-textbook-bg);
+  color: var(--color-textbook-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for an engineered look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-textbook-bg); 
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8; 
+}
+
+/* Fading typewriter animation for new blocks */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-typewriter {
+  animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUpModal {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-modal {
+  animation: slideUpModal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
